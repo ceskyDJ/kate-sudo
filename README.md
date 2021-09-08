@@ -10,7 +10,7 @@ Kate can't be run as superuser in a normal way (`sudo kate file`). You need to u
 
 Installation is done by Make. You need to run `make install` only and restart your running shell.
 
-If you haven't use Bash shell or haven't .alias or .bashrc file, you need to add alias (`alias kate='run-kate'`) manually to your shell's config file. For .bashrc it looks like this: `echo "alias kate='run-kate'" >> .bashrc` (or you can open .bashrc file by Kate/nano/... and simply insert alias record there.
+If you haven't use Bash shell or haven't .alias or .bashrc file, you need to add alias (`alias kate='kate-sudo'`) manually to your shell's config file. For .bashrc it looks like this: `echo "alias kate='kate-sudo'" >> .bashrc` (or you can open .bashrc file by Kate/nano/... and simply insert alias record there.
 
 **Copy-Paste version:**
 ```bash
