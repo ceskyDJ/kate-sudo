@@ -1,13 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-if [ "$EUID" -ne "0" ]; then
+if [[ $EUID > 0 ]]; then
     # Non-root run
     kate $@
 else
     # Sudo or root run
     if SUDO_EDITOR=kate sudoedit $@ >/dev/null 2>&1; then
         # File must be edited with sudo
-        SUDO_EDITOR=kate sudoedit $@
+        # editor is already opened by command executed in condition
+        :
     else
         # File can be edited without sudo
         sudo -u $SUDO_USER /usr/bin/kate $@ >/dev/null 2>&1
